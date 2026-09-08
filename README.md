@@ -12,16 +12,10 @@ A Vite + React starter wired up with Firebase (Firestore), built as a hands-on l
    npm install
    ```
 
-2. Create a `.env` file in the project root with your own Firebase project's config (find these values in the Firebase console under Project Settings):
+2. Copy `.env.dist` to `.env` and fill in your own Firebase project's config (find these values in the Firebase console under Project Settings):
 
-   ```
-   VITE_FIREBASE_API_KEY=your_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-   VITE_FIREBASE_APP_ID=your_app_id
-   VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   ```bash
+   cp .env.dist .env
    ```
 
 3. Start the dev server:
