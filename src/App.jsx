@@ -1,6 +1,6 @@
 import './App.css';
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import {useState, useEffect} from 'react';
 
 const firebaseConfig = {
@@ -24,11 +24,11 @@ function App() {
     async function testFirestore() {
       const docRef = doc(db, "testCollection", "testDocument");
 
-      // Updates specific fields
-      await updateDoc(docRef, {
+      // Creates the document if it doesn't exist yet, otherwise merges these fields
+      await setDoc(docRef, {
         age: 400040,
         name: "Jasmine McLynne",
-      });
+      }, { merge: true });
 
       const docSnap = await getDoc(docRef);
 
